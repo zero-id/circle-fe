@@ -32,7 +32,7 @@ const ThreadPost = ({ threadId, callback, onClose }: IPostThreadProps) => {
     onCloseLogin,
     isOpenLogin,
     isLoading,
-    onOpenLogin
+    onOpenLogin,
   } = useThreadPost();
 
   const {
