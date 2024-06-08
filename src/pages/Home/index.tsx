@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <Box className="beranda" overflow={"auto"}>
-      <Box p={"20px"} pt={"15px"}>
+      <Box border={"1px solid rgba(63, 63, 63, 1)"} borderTop={"0px"} p={"20px"} pt={"15px"}>
         <Text mb={"20px"} fontSize={"22px"} color={"white"} fontWeight={"bold"}>
           Home
         </Text>
