@@ -65,7 +65,7 @@ export const UserProfileCard = ({
         <Text fontSize={"14px"} color={"gray"}>
           @{user?.username}
         </Text>
-        <Text fontSize={"16px"}>{user?.profile?.bio ?? "kon"}</Text>
+        <Text fontSize={"16px"}>{user?.profile?.bio ?? "Add your bio"}</Text>
         <Box display={"flex"} gap={"4"}>
           <Text fontSize={"16px"}>
             {user?._count?.following}
