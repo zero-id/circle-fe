@@ -34,6 +34,7 @@ const FormRegister = ({
           name="fullname"
           type="text"
           placeholder="Full name"
+          id="fullname"
         />
       </Box>
       <Box>
@@ -45,6 +46,7 @@ const FormRegister = ({
           name="username"
           type="text"
           placeholder="Username"
+          id="username"
         />
       </Box>
       <Box>
@@ -56,6 +58,7 @@ const FormRegister = ({
           name="email"
           type="text"
           placeholder="Email"
+          id="email"
         />
       </Box>
       <Box>
@@ -67,6 +70,7 @@ const FormRegister = ({
           name="password"
           type="password"
           placeholder="Password"
+          id="password"
         />
       </Box>
       <Button
