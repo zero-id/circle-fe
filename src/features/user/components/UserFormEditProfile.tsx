@@ -5,6 +5,7 @@ import {
   FormLabel,
   Image,
   Input,
+  Text,
 } from "@chakra-ui/react";
 import useUserEditProfile from "../hooks/useUserEditProfile";
 import useUser from "../hooks/useUser";
@@ -54,6 +55,7 @@ const UserFormEditProfile = ({
               name="cover"
               display={"none"}
             />
+            <Text>Image size max 2MB</Text>
             <Image
               src={
                 preview.cover

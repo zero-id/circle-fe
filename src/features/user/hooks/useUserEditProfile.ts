@@ -113,6 +113,9 @@ const useUserEditProfile = () => {
       const err = error as unknown as Error;
       if (err.message === "Request failed with status code 500")
         alert("Username already exists");
+
+      if (err.message === "Request failed with status code 400")
+        alert("Max file size is 2MB");
     } finally {
       setIsLoading(false);
     }
