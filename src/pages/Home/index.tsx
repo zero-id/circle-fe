@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <Box className="beranda" overflow={"auto"}>
       <Box
-        border={"1px solid rgba(63, 63, 63, 1)"}
+        // border={"1px solid rgba(63, 63, 63, 1)"}
         borderTop={"none"}
         p={"20px"}
         pt={"15px"}
