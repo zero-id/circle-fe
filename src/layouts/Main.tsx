@@ -35,7 +35,8 @@ const Main = () => {
         overflow={"auto"}
         className="scrollbar-hide"
         border={{ base: "none", md: "1px solid gray" }}
-        borderTop={"none"}
+        borderTop={{ base: "none", md: "none" }}
+        
       >
         <Navbar />
         <Outlet />
