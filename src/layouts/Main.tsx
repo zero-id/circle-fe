@@ -26,6 +26,7 @@ const Main = () => {
       bgColor={"rgba(29, 29, 29, 1)"}
       h={"100vh"}
       color={"white"}
+      mt={{base: "50px", md: "0px"}}
     >
       <Box p={"20px"} display={{ base: "none", md: "block" }} flex={1.1}>
         <Sidebar />

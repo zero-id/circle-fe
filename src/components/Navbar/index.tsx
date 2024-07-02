@@ -31,7 +31,8 @@ const Navbar = () => {
       pos={"fixed"}
       left={"0"}
       right={"0"}
-      bottom={"0"}
+      top={"0"}
+      pt={"5px"}
       h={"50px"}
       zIndex={"10"}
       display={{base: "block", md: "none"}}
