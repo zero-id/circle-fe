@@ -39,36 +39,6 @@ export const useThreadLike = () => {
     handleLike,
     auth
   };
-  // const [liked, setliked] = useState(false);
-
-  // const getLike = async ({ threadId }: { threadId: number }) => {
-  //   try {
-  //     const res = await checkLike(threadId!);
-  //     setliked(res.data.data.like === null ? false : true);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // const handleLike = async ({
-  //   threadId,
-  //   callback,
-  // }: {
-  //   threadId: number;
-  //   callback: () => void;
-  // }) => {
-  //   try {
-  //     // likeThread(threadId);
-
-  //     callback();
-
-  //     await getLike({ threadId });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // return { liked, handleLike, getLike };
 };
 
 export default useThreadLike;

@@ -6,6 +6,7 @@ import FormLogin from "../../auth/components/FormLogin";
 import { IThread } from "../../../types/app";
 import useThreadLike from "../hooks/useThreadLike";
 import FormRegister from "../../auth/components/FormRegister";
+import { useAppSelector } from "../../../store";
 
 interface IThreadLikeButtonProps {
   thread?: IThread | undefined;
@@ -30,7 +31,7 @@ const ThreadLikeButton: React.FC<IThreadLikeButtonProps> = ({ thread }) => {
     <>
       <Button
         onClick={() =>
-          localStorage.getItem("token") ? handleLike({ thread }) : onOpen()
+          auth.token ? handleLike({ thread }) : onOpen()
         }
         _hover={{ backgroundColor: "transparent" }}
         backgroundColor={"transparent"}
