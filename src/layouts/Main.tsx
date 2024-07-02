@@ -36,7 +36,6 @@ const Main = () => {
         className="scrollbar-hide"
         border={{ base: "none", md: "1px solid gray" }}
         borderTop={{ base: "none", md: "none" }}
-        
       >
         <Navbar />
         <Outlet />
