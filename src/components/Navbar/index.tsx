@@ -33,7 +33,7 @@ const Navbar = () => {
       right={"0"}
       top={"0"}
       pt={"5px"}
-      pb={"10px"}
+      pb={"100px"}
       h={"50px"}
       zIndex={"10"}
       display={{base: "block", md: "none"}}
