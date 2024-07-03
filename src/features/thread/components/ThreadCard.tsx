@@ -21,9 +21,9 @@ const ThreadCard: React.FC<IThreadCardProps> = ({ thread, callback }) => {
   return (
     <Box
       display={"flex"}
-      borderRight={{base: "none", md: "1px solid rgba(63, 63, 63, 1)"}}
-      borderLeft={{base: "none", md: "1px solid rgba(63, 63, 63, 1)"}}
-      borderTop={{base: "none", md: "1px solid rgba(63, 63, 63, 1)"}}
+      borderRight={{ base: "none", md: "1px solid rgba(63, 63, 63, 1)" }}
+      borderLeft={{ base: "none", md: "1px solid rgba(63, 63, 63, 1)" }}
+      borderTop={{ base: "none", md: "1px solid rgba(63, 63, 63, 1)" }}
       borderBottom={"1px solid rgba(63, 63, 63, 1)"}
       p={"20px"}
       pt={"20px"}
@@ -31,12 +31,11 @@ const ThreadCard: React.FC<IThreadCardProps> = ({ thread, callback }) => {
     >
       <Box
         cursor={"pointer"}
-        w={"40px"}
+        w={"50px"}
         onClick={() => navigate(`/detail-profile/${thread.author?.id}`)}
-        borderRadius={"100%"}
       >
         <Image
-          w={"100%"}
+          w={"40px"}
           h={"40px"}
           objectFit={"cover"}
           borderRadius={"100%"}
