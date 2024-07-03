@@ -40,8 +40,9 @@ export const UserProfileCard = ({
           src={user?.profile?.avatar ?? avatar}
         />
       </Box>
-      {auth?.id === user?.id ? (
-        <Box w={"100%"} display={"flex"} justifyContent={"end"}>
+
+      <Box w={"100%"} display={"flex"} justifyContent={"end"}>
+        {auth?.id === user?.id ? (
           <Text
             px={"12px"}
             py={"5px"}
@@ -53,18 +54,19 @@ export const UserProfileCard = ({
           >
             Edit Profil
           </Text>
-          <ModalDialog
-            isOpen={isOpen}
-            onClose={onClose}
-            children={
-              <UserFormEditProfile callback={callback} onClose={onClose} />
-            }
-            title={"Edit Profile"}
-          />
-        </Box>
-      ) : (
-        <FollowButton user={user} />
-      )}
+        ) : (
+          <FollowButton user={user} />
+        )}
+        <ModalDialog
+          isOpen={isOpen}
+          onClose={onClose}
+          children={
+            <UserFormEditProfile callback={callback} onClose={onClose} />
+          }
+          title={"Edit Profile"}
+        />
+      </Box>
+
       {/* <ModalEditProfile isOpen={isOpen} onClose={onClose} /> */}
       <Box display={"flex"} fontSize={"14px"} flexDir={"column"} gap={"1px"}>
         <Text fontSize={"18px"} fontWeight={"Bold"}>
