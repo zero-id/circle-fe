@@ -21,6 +21,8 @@ import { IThread } from "../../types/app";
 const ProfilePage = () => {
   const { users, fetchUsers } = useUser();
   const { id } = useParams();
+  console.log(id);
+  
   const user = users.find((user) => user.id === +id!);
 
   useEffect(() => {
