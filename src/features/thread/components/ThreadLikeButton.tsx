@@ -30,7 +30,7 @@ const ThreadLikeButton: React.FC<IThreadLikeButtonProps> = ({ thread }) => {
     <>
       <Button
         onClick={() =>
-          auth.token ? handleLike({ thread }) : onOpen()
+          auth.user ? handleLike({ thread }) : onOpen()
         }
         _hover={{ backgroundColor: "transparent" }}
         backgroundColor={"transparent"}

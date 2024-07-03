@@ -1,4 +1,4 @@
-import { Box, Button } from "@chakra-ui/react";
+import { Box, Button, useDisclosure } from "@chakra-ui/react";
 import { useAppDispatch, useAppSelector } from "../../../store";
 import React, { useEffect, useState } from "react";
 import { IUser } from "../../../types/app";
@@ -6,6 +6,9 @@ import { follow } from "../../../libs/api/call/follow";
 import useLogin from "../../auth/hooks/useLogin";
 import { SET_LOGIN } from "../../../store/slice/auth";
 import { getUser } from "../../../libs/api/call/user";
+import ModalDialog from "../../../components/ModalDialog";
+import FormLogin from "../../auth/components/FormLogin";
+import FormRegister from "../../auth/components/FormRegister";
 
 type IFollowButtonProps = {
   user?: IUser;
@@ -17,6 +20,13 @@ const FollowButton: React.FC<IFollowButtonProps> = ({ user }) => {
   const [isFollowing, setIsFollowing] = useState(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { check } = useLogin();
+
+  const { onClose, onOpen, isOpen } = useDisclosure();
+  const {
+    onClose: onCloseRegister,
+    onOpen: onOpenRegister,
+    isOpen: isOpenRegister,
+  } = useDisclosure();
 
   const checkFollowing = () => {
     if (auth.user && user) {
@@ -63,10 +73,26 @@ const FollowButton: React.FC<IFollowButtonProps> = ({ user }) => {
         bg={isFollowing ? "green" : ""}
         color={isFollowing ? "white" : "green"}
         px={3}
-        onClick={handleFollow}
+        onClick={() => auth.user ? handleFollow : onOpen()}
       >
         {isFollowing ? "Unfollow" : "Follow"}
       </Button>
+      <ModalDialog
+        isOpen={isOpen}
+        onClose={onClose}
+        children={
+          <FormLogin onClose={onClose} onOpenRegister={onCloseRegister} />
+        }
+        title="Login"
+      />
+      <ModalDialog
+        isOpen={isOpenRegister}
+        onClose={onCloseRegister}
+        children={
+          <FormRegister onClose={onCloseRegister} onOpenLogin={onOpen} />
+        }
+        title="Register"
+      />
     </Box>
   );
 };
