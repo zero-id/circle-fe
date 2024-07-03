@@ -24,6 +24,7 @@ const FollowButton: React.FC<IFollowButtonProps> = ({ user }) => {
   const { onClose, onOpen, isOpen } = useDisclosure();
   const {
     onClose: onCloseRegister,
+    onOpen: onOpenRegister,
     isOpen: isOpenRegister,
   } = useDisclosure();
 
@@ -80,7 +81,7 @@ const FollowButton: React.FC<IFollowButtonProps> = ({ user }) => {
         isOpen={isOpen}
         onClose={onClose}
         children={
-          <FormLogin onClose={onClose} onOpenRegister={onCloseRegister} />
+          <FormLogin onClose={onClose} onOpenRegister={onOpenRegister} />
         }
         title="Login"
       />
