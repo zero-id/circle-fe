@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const API = axios.create({
-  baseURL: "https://cicrcle-be-production.up.railway.app/api/v1",
+  baseURL: process.env.REACT_APP_API_URL,
 });
