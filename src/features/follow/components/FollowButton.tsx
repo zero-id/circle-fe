@@ -11,7 +11,7 @@ import FormLogin from "../../auth/components/FormLogin";
 import FormRegister from "../../auth/components/FormRegister";
 
 type IFollowButtonProps = {
-  user?: IUser;
+  user: IUser;
 };
 
 const FollowButton: React.FC<IFollowButtonProps> = ({ user }) => {
@@ -44,7 +44,8 @@ const FollowButton: React.FC<IFollowButtonProps> = ({ user }) => {
   const handleFollow = async () => {
     try {
       setIsLoading(true);
-      if (user) await follow({ followingId: +user.id! });
+
+      await follow({ followingId: Number(user.id) });
 
       await check();
       const resUser = await getUser(localStorage.token);
@@ -54,6 +55,7 @@ const FollowButton: React.FC<IFollowButtonProps> = ({ user }) => {
           token: localStorage.token,
         })
       );
+
       setIsFollowing(!isFollowing);
     } catch (error) {
       console.error(error);
@@ -73,7 +75,7 @@ const FollowButton: React.FC<IFollowButtonProps> = ({ user }) => {
         bg={isFollowing ? "green" : ""}
         color={isFollowing ? "white" : "green"}
         px={3}
-        onClick={() => auth.user ? handleFollow : onOpen()}
+        onClick={() => (auth.user ? handleFollow() : onOpen())}
       >
         {isFollowing ? "Unfollow" : "Follow"}
       </Button>

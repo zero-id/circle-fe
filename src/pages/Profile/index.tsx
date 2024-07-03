@@ -49,7 +49,8 @@ const ProfilePage = () => {
           >
             &larr; {user?.fullname}
           </Text>
-          <UserProfileCard user={user} callback={fetchUsers} />
+          {user && <UserProfileCard user={user} callback={fetchUsers} />}
+          
         </Box>
         <Tabs isFitted variant="">
           <TabList

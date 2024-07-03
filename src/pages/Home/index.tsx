@@ -9,7 +9,7 @@ const Home = () => {
   const { thread, fetchThreads } = useThread();
   const auth = useAppSelector((state) => state.auth.user?.follower);
 
-  const threadFilter = thread.filter((thread) => thread.threadId === null);
+  const threadFilter = thread?.filter((thread) => thread?.threadId === null);
 
   console.log(auth, "auth");
   console.log(thread, "thread");
@@ -30,7 +30,7 @@ const Home = () => {
         </Text>
         <ThreadPost callback={fetchThreads} />
       </Box>
-      {threadFilter.map((thread) => (
+      {threadFilter?.map((thread) => (
         <ThreadCard key={thread.id} thread={thread} callback={fetchThreads} />
       ))}
     </Box>

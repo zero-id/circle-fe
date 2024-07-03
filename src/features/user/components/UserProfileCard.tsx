@@ -10,7 +10,7 @@ export const UserProfileCard = ({
   callback,
   user,
 }: {
-  user?: IUser;
+  user: IUser;
   callback?: () => void;
 }): React.JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure();
