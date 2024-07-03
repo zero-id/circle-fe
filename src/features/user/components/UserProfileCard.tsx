@@ -3,16 +3,20 @@ import ModalDialog from "../../../components/ModalDialog";
 import UserFormEditProfile from "./UserFormEditProfile";
 import useUser from "../hooks/useUser";
 import { IUser } from "../../../types/app";
+import { useAppSelector } from "../../../store";
+import FollowButton from "../../follow/components/FollowButton";
 
 export const UserProfileCard = ({
   callback,
   user,
 }: {
-  user?: IUser | null | undefined;
+  user?: IUser;
   callback?: () => void;
 }): React.JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { avatar, cover } = useUser();
+
+  const auth = useAppSelector((state) => state.auth.user);
 
   return (
     <>
@@ -36,27 +40,31 @@ export const UserProfileCard = ({
           src={user?.profile?.avatar ?? avatar}
         />
       </Box>
-      <Box w={"100%"} display={"flex"} justifyContent={"end"}>
-        <Text
-          px={"12px"}
-          py={"5px"}
-          border={"1px solid white"}
-          borderRadius={"20px"}
-          fontSize={"16px"}
-          cursor={"pointer"}
-          onClick={onOpen}
-        >
-          Edit Profil
-        </Text>
-        <ModalDialog
-          isOpen={isOpen}
-          onClose={onClose}
-          children={
-            <UserFormEditProfile callback={callback} onClose={onClose} />
-          }
-          title={"Edit Profile"}
-        />
-      </Box>
+      {auth?.id === user?.id ? (
+        <Box w={"100%"} display={"flex"} justifyContent={"end"}>
+          <Text
+            px={"12px"}
+            py={"5px"}
+            border={"1px solid white"}
+            borderRadius={"20px"}
+            fontSize={"16px"}
+            cursor={"pointer"}
+            onClick={onOpen}
+          >
+            Edit Profil
+          </Text>
+          <ModalDialog
+            isOpen={isOpen}
+            onClose={onClose}
+            children={
+              <UserFormEditProfile callback={callback} onClose={onClose} />
+            }
+            title={"Edit Profile"}
+          />
+        </Box>
+      ) : (
+        <FollowButton user={user} />
+      )}
       {/* <ModalEditProfile isOpen={isOpen} onClose={onClose} /> */}
       <Box display={"flex"} fontSize={"14px"} flexDir={"column"} gap={"1px"}>
         <Text fontSize={"18px"} fontWeight={"Bold"}>

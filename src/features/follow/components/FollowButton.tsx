@@ -8,7 +8,7 @@ import { SET_LOGIN } from "../../../store/slice/auth";
 import { getUser } from "../../../libs/api/call/user";
 
 type IFollowButtonProps = {
-  user: IUser;
+  user?: IUser;
 };
 
 const FollowButton: React.FC<IFollowButtonProps> = ({ user }) => {
@@ -34,7 +34,7 @@ const FollowButton: React.FC<IFollowButtonProps> = ({ user }) => {
   const handleFollow = async () => {
     try {
       setIsLoading(true);
-      await follow({ followingId: +user.id! });
+      if (user) await follow({ followingId: +user.id! });
 
       await check();
       const resUser = await getUser(localStorage.token);

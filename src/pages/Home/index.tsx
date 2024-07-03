@@ -26,7 +26,7 @@ const Home = () => {
         pt={"15px"}
       >
         <Text mb={"20px"} fontSize={"22px"} color={"white"} fontWeight={"bold"}>
-          Home..
+          Home
         </Text>
         <ThreadPost callback={fetchThreads} />
       </Box>
