@@ -32,6 +32,7 @@ const ThreadCard: React.FC<IThreadCardProps> = ({ thread, callback }) => {
       <Box
         cursor={"pointer"}
         onClick={() => navigate(`/detail-profile/${thread.author?.id}`)}
+        borderRadius={"100%"}
       >
         <Image
           w={"40px"}
