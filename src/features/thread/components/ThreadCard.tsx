@@ -31,6 +31,7 @@ const ThreadCard: React.FC<IThreadCardProps> = ({ thread, callback }) => {
     >
       <Box
         cursor={"pointer"}
+        w={"40px"}
         onClick={() => navigate(`/detail-profile/${thread.author?.id}`)}
         borderRadius={"100%"}
       >
@@ -48,7 +49,6 @@ const ThreadCard: React.FC<IThreadCardProps> = ({ thread, callback }) => {
         />
       </Box>
       <Box
-        w={"100%"}
         display={"flex"}
         flexDir={"column"}
         gap={"10px"}
