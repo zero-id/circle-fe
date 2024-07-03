@@ -31,7 +31,7 @@ const ThreadCard: React.FC<IThreadCardProps> = ({ thread, callback }) => {
     >
       <Box
         cursor={"pointer"}
-        flex={{ base: 1, md: 1 }}
+        flex={{ base: 2, md: 1 }}
         onClick={() => navigate(`/detail-profile/${thread.author?.id}`)}
       >
         <Image
@@ -47,7 +47,7 @@ const ThreadCard: React.FC<IThreadCardProps> = ({ thread, callback }) => {
         />
       </Box>
       <Box
-        flex={{ base: 9, md: 10 }}
+        flex={{ base: 10, md: 10 }}
         display={"flex"}
         flexDir={"column"}
         gap={"10px"}
