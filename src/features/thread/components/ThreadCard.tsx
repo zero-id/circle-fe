@@ -47,7 +47,7 @@ const ThreadCard: React.FC<IThreadCardProps> = ({ thread, callback }) => {
         />
       </Box>
       <Box
-        flex={4}
+        flex={6}
         display={"flex"}
         flexDir={"column"}
         gap={"10px"}
