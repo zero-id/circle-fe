@@ -25,7 +25,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     fetchUsers();
-  }, [id]);
+  }, [user]);
 
   const navigate = useNavigate();
   return (
