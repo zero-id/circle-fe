@@ -36,7 +36,7 @@ const ThreadCard: React.FC<IThreadCardProps> = ({ thread, callback }) => {
         borderRadius={"100%"}
       >
         <Image
-          w={"40px"}
+          w={"100%"}
           h={"40px"}
           objectFit={"cover"}
           borderRadius={"100%"}
