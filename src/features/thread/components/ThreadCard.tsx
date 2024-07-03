@@ -35,10 +35,8 @@ const ThreadCard: React.FC<IThreadCardProps> = ({ thread, callback }) => {
         onClick={() => navigate(`/detail-profile/${thread.author?.id}`)}
       >
         <Image
-          w={"40px"}
-          h={"40px"}
+          w={"100%"}
           objectFit={"cover"}
-          borderRadius={"100%"}
           src={
             thread?.author?.profile?.avatar
               ? thread.author.profile.avatar
