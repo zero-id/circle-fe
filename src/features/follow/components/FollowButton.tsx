@@ -24,7 +24,6 @@ const FollowButton: React.FC<IFollowButtonProps> = ({ user }) => {
   const { onClose, onOpen, isOpen } = useDisclosure();
   const {
     onClose: onCloseRegister,
-    onOpen: onOpenRegister,
     isOpen: isOpenRegister,
   } = useDisclosure();
 
